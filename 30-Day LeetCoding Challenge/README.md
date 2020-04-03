@@ -21,6 +21,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 	`Output: 4`
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Day%201%20-%20Single%20Number.cpp) <br />
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%201%20-%20Single%20Number.py) <br />
 Using XOR operator, there are 3 things to remember:
 - a number XOR with itself is 0
 - a number XOR with 0 is the number itself
@@ -39,6 +40,7 @@ A happy number is a number defined by the following process: Starting with any p
 ![$1^2 + 0^2 + 0^2 = 1$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%200%5E2%20%2B%200%5E2%20%3D%201%24)
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Day%202%20-%20Happy%20Number.cpp) <br />
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%202%20-%20Happy%20Number.py) <br />
 First I will write a function can calculate a number following above rule (I call it is `calculate` function). Then, I need a while loop, in there, I will use this function to calculate input number and check the result:
 - If it equals to 1 => The number is a "Happy Number".
 - If it is in vector `nums`, which contains the result of `calculate` function after every loop => Causing endlessly loop => The number is not a "Happy Number".
