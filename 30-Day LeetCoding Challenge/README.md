@@ -1,7 +1,7 @@
 
 # 30 Day LeetCoding Challenge
 Hi! I've been recently participated in **LeetCode** community and during the COVID-19 pandemic, I've joined **30 day LeetCoding Challenge**. I will update all problems and solutions for them with my explanations.
-> Starting date: 02/04/20
+> Starting date: 02/04/20  
 > Expected finish date: 30/04/20
 ## Index
 1. [Day 1 - Single Number](#day1)
@@ -13,7 +13,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.<br />
 *Note:*
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?<br />
-*Example 1*
+*Example 1*  
 	`Input: [2,2,1]`
 	`Output: 1`  
 *Example 2*  
@@ -31,14 +31,15 @@ Write an algorithm to determine if a number is "happy".<br />
 A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.<br />
 *Example*  
 `Input: 19`
-`Output: true`
-*Explanation:* 
-$1^2 + 9^2 = 82$
-$8^2 + 2^2 = 68$
-$6^2 + 8^2 = 100$
-$1^2 + 0^2 + 0^2 = 1$
+`Output: true`  
+*Explanation:*  
+![$1^2 + 9^2 = 82$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%209%5E2%20%3D%2082%24)  
+![$8^2 + 2^2 = 68$](https://render.githubusercontent.com/render/math?math=%248%5E2%20%2B%202%5E2%20%3D%2068%24)  
+![$6^2 + 8^2 = 100$](https://render.githubusercontent.com/render/math?math=%246%5E2%20%2B%208%5E2%20%3D%20100%24)  
+![$1^2 + 0^2 + 0^2 = 1$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%200%5E2%20%2B%200%5E2%20%3D%201%24)
 ### Solution & Explanation
-First I will write a function can calculate a number following above rule (I call it is `calculate` function. Then, I need a while loop, in there, I will use this function to calculate input number and check the result:
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Day%202%20-%20Happy%20Number.cpp) <br />
+First I will write a function can calculate a number following above rule (I call it is `calculate` function). Then, I need a while loop, in there, I will use this function to calculate input number and check the result:
 - If it equals to 1 => The number is a "Happy Number".
 - If it is in vector `nums`, which contains the result of `calculate` function after every loop => Causing endlessly loop => The number is not a "Happy Number".
 - If it does not equals to 1 and is not in `nums` => Push it in nums and continue the loop.
