@@ -7,6 +7,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 1. [Day 1 - Single Number](#day1)
 2. [Day 2 - Happy Number](#day2)
 3. [Day 3 - Maximum Subarray](#day3)
+4. [Day 4 - Move Zeroes](#day4)
 
 ## Day 1 - Single Number<a name="day1"></a>
 
@@ -54,8 +55,20 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 `Input: [-2,1,-3,4,-1,2,1,-5,4]`  
 `Output: 6`  
 *Explanation*  
-[4,-1,2,1] has the largest sum = 6.
+`[4,-1,2,1]` has the largest `sum = 6`.
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%203%20-%20Maximum%20Subarray.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%203%20-%20Maximum%20Subarray.py)  
 Using Kadane's Algorithm which loops through input list and in each iterator it computes sum of `local_max` and `current value of list` and compares with `current value of list`. Then, save the greater to `local_max`. Of course, before move to next iterator, it will compare `local_max` with `global_max` (which is initialized with `-Infinity` value). This problem is very popular. [More information about this problem here!](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
+
+## Day 4 - Move Zeroes<a name="day4"></a>
+### Problem
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+*Example*  
+`Input: [0,1,0,3,12]`  
+`Output: [1,3,12,0,0]`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%204%20-%20Move%20Zeroes.cpp)
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%204%20-%20Move%20Zeroes.py)  
+I use a variable -`count`- to save the number of non-zero elements in the input array -`nums`. Loop through `nums`, every time I check if the value is non-zeros, I will `swap(nums[count],nums[i]`) and increase the value of `count` to 1.
+
