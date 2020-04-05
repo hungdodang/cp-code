@@ -68,7 +68,7 @@ Given an array nums, write a function to move all 0's to the end of it while mai
 `Input: [0,1,0,3,12]`  
 `Output: [1,3,12,0,0]`  
 ### Solution & Explanation
-[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%204%20-%20Move%20Zeroes.cpp)
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%204%20-%20Move%20Zeroes.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%204%20-%20Move%20Zeroes.py)  
 I use a variable -`count`- to save the number of non-zero elements in the input array -`nums`. Loop through `nums`, every time I check if the value is non-zeros, I will `swap(nums[count],nums[i]`) and increase the value of `count` to 1.
 
