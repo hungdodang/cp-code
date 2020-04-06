@@ -8,7 +8,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 2. [Day 2 - Happy Number](#day2)
 3. [Day 3 - Maximum Subarray](#day3)
 4. [Day 4 - Move Zeroes](#day4)
-
+5. [ Day 5 - Best Time to Buy and Sell Stock II](#day5)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -72,3 +72,20 @@ Given an array nums, write a function to move all 0's to the end of it while mai
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%204%20-%20Move%20Zeroes.py)  
 I use a variable -`count`- to save the number of non-zero elements in the input array -`nums`. Loop through `nums`, every time I check if the value is non-zeros, I will `swap(nums[count],nums[i]`) and increase the value of `count` to 1.
 
+## Day 5 - Best Time to Buy and Sell Stock II<a name="day5"></a>
+### Problem
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+
+Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).  
+*Example*  
+`Input: [7,1,5,3,6,4]`  
+`Output: 7`  
+*Explanation*  
+Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+### Solution & Explanation
+[Solution in C++]()  
+[Solution in Python]()  
+Initialize a variable to save profit `max_profit`. Go through input array start at index = 1 to the end. Check if the previous element is smaller than the current element, then subtract previous element from current element and add the result to `max_profit`.  
+As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't need to find the minimum and the maximun afterward. Just compare 2 adjacent elements!  
