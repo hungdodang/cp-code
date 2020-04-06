@@ -35,7 +35,7 @@ A happy number is a number defined by the following process: Starting with any p
 *Example*  
 `Input: 19`  
 `Output: true`  
-*Explanation:*  
+*Explanation*  
 ![$1^2 + 9^2 = 82$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%209%5E2%20%3D%2082%24)  
 ![$8^2 + 2^2 = 68$](https://render.githubusercontent.com/render/math?math=%248%5E2%20%2B%202%5E2%20%3D%2068%24)  
 ![$6^2 + 8^2 = 100$](https://render.githubusercontent.com/render/math?math=%246%5E2%20%2B%208%5E2%20%3D%20100%24)  
@@ -50,7 +50,7 @@ First I will write a function can calculate a number following above rule (I cal
 
 ## Day 3 - Maximum Subarray<a name="day3"></a>
 ### Problem
-Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  
 *Example*  
 `Input: [-2,1,-3,4,-1,2,1,-5,4]`  
 `Output: 6`  
@@ -63,7 +63,7 @@ Using Kadane's Algorithm which loops through input list and in each iterator it 
 
 ## Day 4 - Move Zeroes<a name="day4"></a>
 ### Problem
-Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.  
 *Example*  
 `Input: [0,1,0,3,12]`  
 `Output: [1,3,12,0,0]`  
