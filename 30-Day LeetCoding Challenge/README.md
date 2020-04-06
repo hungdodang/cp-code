@@ -85,7 +85,7 @@ Note: You may not engage in multiple transactions at the same time (i.e., you mu
 *Explanation*  
 Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
 ### Solution & Explanation
-[Solution in C++]()  
-[Solution in Python]()  
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%205%20-%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%205%20-%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.py)  
 Initialize a variable to save profit `max_profit`. Go through input array start at index = 1 to the end. Check if the previous element is smaller than the current element, then subtract previous element from current element and add the result to `max_profit`.  
-As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't need to find the minimum and the maximun afterward. Just compare 2 adjacent elements!  
+As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't need to find the minimum and the maximum afterward. Just compare 2 adjacent elements!  
