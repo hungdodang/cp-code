@@ -89,3 +89,20 @@ Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then b
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%205%20-%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.py)  
 Initialize a variable to save profit `max_profit`. Go through input array start at index = 1 to the end. Check if the previous element is smaller than the current element, then subtract previous element from current element and add the result to `max_profit`.  
 As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't need to find the minimum and the maximum afterward. Just compare 2 adjacent elements!  
+## Day 6 - Group Anagrams<a name="day6"></a>
+### Problem
+Given an array of strings, group anagrams together.  
+*Example*  
+`Input: ["eat", "tea", "tan", "ate", "nat", "bat"]`  
+`Output:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%206%20-%20Group%20Anagrams.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%206%20-%20Group%20Anagrams.py)  
+I sort string in input vector before check if it exists in `different_string` vector contained all sorted strings. If it does, I push the original string in `answer` vector. Othewise, I will push the sorted string in `different_string`.  
+
+
