@@ -8,7 +8,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 2. [Day 2 - Happy Number](#day2)
 3. [Day 3 - Maximum Subarray](#day3)
 4. [Day 4 - Move Zeroes](#day4)
-
+5. [ Day 5 - Best Time to Buy and Sell Stock II](#day5)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -35,7 +35,7 @@ A happy number is a number defined by the following process: Starting with any p
 *Example*  
 `Input: 19`  
 `Output: true`  
-*Explanation:*  
+*Explanation*  
 ![$1^2 + 9^2 = 82$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%209%5E2%20%3D%2082%24)  
 ![$8^2 + 2^2 = 68$](https://render.githubusercontent.com/render/math?math=%248%5E2%20%2B%202%5E2%20%3D%2068%24)  
 ![$6^2 + 8^2 = 100$](https://render.githubusercontent.com/render/math?math=%246%5E2%20%2B%208%5E2%20%3D%20100%24)  
@@ -50,7 +50,7 @@ First I will write a function can calculate a number following above rule (I cal
 
 ## Day 3 - Maximum Subarray<a name="day3"></a>
 ### Problem
-Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  
 *Example*  
 `Input: [-2,1,-3,4,-1,2,1,-5,4]`  
 `Output: 6`  
@@ -63,7 +63,7 @@ Using Kadane's Algorithm which loops through input list and in each iterator it 
 
 ## Day 4 - Move Zeroes<a name="day4"></a>
 ### Problem
-Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.  
 *Example*  
 `Input: [0,1,0,3,12]`  
 `Output: [1,3,12,0,0]`  
@@ -71,4 +71,38 @@ Given an array nums, write a function to move all 0's to the end of it while mai
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%204%20-%20Move%20Zeroes.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%204%20-%20Move%20Zeroes.py)  
 I use a variable -`count`- to save the number of non-zero elements in the input array -`nums`. Loop through `nums`, every time I check if the value is non-zeros, I will `swap(nums[count],nums[i]`) and increase the value of `count` to 1.
+
+## Day 5 - Best Time to Buy and Sell Stock II<a name="day5"></a>
+### Problem
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+
+Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).  
+*Example*  
+`Input: [7,1,5,3,6,4]`  
+`Output: 7`  
+*Explanation*  
+Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%205%20-%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%205%20-%20Best%20Time%20to%20Buy%20and%20Sell%20Stock%20II.py)  
+Initialize a variable to save profit `max_profit`. Go through input array start at index = 1 to the end. Check if the previous element is smaller than the current element, then subtract previous element from current element and add the result to `max_profit`.  
+As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't need to find the minimum and the maximum afterward. Just compare 2 adjacent elements!  
+## Day 6 - Group Anagrams<a name="day6"></a>
+### Problem
+Given an array of strings, group anagrams together.  
+*Example*  
+`Input: ["eat", "tea", "tan", "ate", "nat", "bat"]`  
+`Output:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%206%20-%20Group%20Anagrams.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%206%20-%20Group%20Anagrams.py)  
+I sort string in input vector before check if it exists in `different_string` vector contained all sorted strings. If it does, I push the original string in `answer` vector. Othewise, I will push the sorted string in `different_string`.  
+
 
