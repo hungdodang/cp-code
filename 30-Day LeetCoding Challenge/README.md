@@ -8,7 +8,10 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 2. [Day 2 - Happy Number](#day2)
 3. [Day 3 - Maximum Subarray](#day3)
 4. [Day 4 - Move Zeroes](#day4)
-5. [ Day 5 - Best Time to Buy and Sell Stock II](#day5)
+5. [Day 5 - Best Time to Buy and Sell Stock II](#day5)
+6. [Day 6 - Group Anagrams](#day6)
+7. [Day 7 - Count Elements](#day7)
+8. [Day 8 - Middle of the Linked List](#day8)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -105,4 +108,39 @@ Given an array of strings, group anagrams together.
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%206%20-%20Group%20Anagrams.py)  
 I sort string in input vector before check if it exists in `different_string` vector contained all sorted strings. If it does, I push the original string in `answer` vector. Othewise, I will push the sorted string in `different_string`.  
 
+## Day 7 - Count Elements<a name="day7"></a>
+### Problem
+Given an integer array `arr`, count element `x` such that `x + 1` is also in `arr`.  
 
+If there're duplicates in `arr`, count them seperately.  
+*Example 1*  
+`Input: arr = [1,2,3]`  
+`Output: 2`  
+*Explanation*   
+1 and 2 are counted cause 2 and 3 are in `arr`.  
+*Example 2*  
+`Input: arr = [1,1,3,3,5,5,7,7]`  
+`Output: 0`  
+*Explanation*  
+No numbers are counted, cause there's no 2, 4, 6, or 8 in `arr`.
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%207%20-%20Count%20Elements.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%207%20-%20Count%20Elements.py)  
+I save all the elements of input vector to a hashset or map. Then I loop through the vector again to check if the `elememt value + 1` is in the hashset.
+## Day 8 - Middle of the Linked List<a name="day8"></a>
+### Problem
+Given a non-empty, singly linked list with head node `head`, return a middle node of linked list.  
+
+If there are two middle nodes, return the second middle node.  
+*Example*  
+`Input: [1,2,3,4,5]`  
+`Output: Node 3 from this list (Serialization: [3,4,5])`  
+*Explanation*  
+The returned node has value 3.  (The judge's serialization of this node is `[3,4,5]`).
+Note that we returned a ListNode object ans, such that:  
+`ans.val = 3`, `ans.next.val = 4`, `ans.next.next.val = 5`, and `ans.next.next.next = NULL`.
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%208%20-%20Middle%20of%20the%20Linked%20List.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%208%20-%20Middle%20of%20the%20Linked%20List.py)  
+I just put every node in a vector (or list in python) and then the middle node is just (size of this vector)/2.  
+**Note:** For this solution I just copy what I submited in LeetCode, which mean it's just the function!
