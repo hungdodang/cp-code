@@ -12,6 +12,8 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 6. [Day 6 - Group Anagrams](#day6)
 7. [Day 7 - Count Elements](#day7)
 8. [Day 8 - Middle of the Linked List](#day8)
+9. [Day 9 - Backspace String Compare](#day9)
+10. [Day 10 - Min Stack](#day10)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -144,3 +146,38 @@ Note that we returned a ListNode object ans, such that:
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%208%20-%20Middle%20of%20the%20Linked%20List.py)  
 I just put every node in a vector (or list in python) and then the middle node is just (size of this vector)/2.  
 **Note:** For this solution I just copy what I submited in LeetCode, which mean it's just the function!
+
+## Day 9 - Backspace String Compare<a name="day9"></a>
+### Problem 
+Given two strings `S` and `T`, return if they are equal when both are typed into empty text editors. `#` means a backspace character.  
+*Example*  
+`Input: S = "ab#c", T = "ad#c"`  
+`Output: true`  
+
+### Solution & Explanation  
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%209%20-%20Backspace%20String%20Compare.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%209%20-%20Backspace%20String%20Compare.py)  
+Loop the string backward, if meet `#` I increase variable `count`. If not, I check the value of `count`, if `count` equals to `0` I will save the character in current iterator.
+## Day 10 - Min Stack<a name="day10"></a>
+### Problem
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+- push(x) -- Push element x onto stack.  
+- pop() -- Removes the element on top of the stack.
+- top() -- Get the top element.
+- getMin() -- Retrieve the minimum element in the stack.  
+*Example*  
+>MinStack minStack = new MinStack();  
+minStack.push(-2);  
+minStack.push(0);  
+minStack.push(-3);  
+minStack.getMin();   --> Returns -3.  
+minStack.pop();  
+minStack.top();      --> Returns 0.  
+minStack.getMin();   --> Returns -2.  
+
+### Solution & Explanation  
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/Day%2010%20-%20Min%20Stack.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/Day%2010%20-%20Min%20Stack.py)  
+Based on the conceptual of stack just remember to save min with value when ever do push action!  
+STL in C++ support stack library, so I just call stack and push in there pairs which contain value and the min value of stack when do push action. In Python I use list contain list to implement this problem.
