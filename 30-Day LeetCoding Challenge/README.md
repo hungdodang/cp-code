@@ -15,6 +15,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 9. [Day 9 - Backspace String Compare](#day9)
 10. [Day 10 - Min Stack](#day10)
 11. [Day 11 - Diameter of Binary Tree](#day11)
+12. [Day 12 - Last Stone Weight](#day12)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -190,4 +191,23 @@ Given a binary tree, you need to compute the length of the diameter of the tree.
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/diameterOfBinaryTree.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/diameterOfBinaryTree.py)  
 To be honest, this problem is really confused me. I need help from [Errichto](https://www.youtube.com/watch?v=M_BaOHkTtyY&) to solve this problem. The algorithm uses DFS to traverse to all node in tree. In every node we save two value: longest path at this time and depth. Longest path of parent node is `max(longest path of left node, longest path of right node, depth of left node + depth of right node)` and depth of parent node is `max(depth of left node, depth of right node) + 1`.  
+
+## Day 12 - Last Stone Weight<a name="day12"></a>
+### Problem
+We have a collection of stones, each stone has a positive integer weight.
+
+Each turn, we choose the two heaviest stones and smash them together.  Suppose the stones have weights x and y with x <= y.  The result of this smash is:
+
+- If x == y, both stones are totally destroyed;
+- If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.  
+At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)  
+**Example**  
+`Input: [2,7,4,1,8,1]`  
+`Output: 1`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/lastStoneWeight.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/lastStoneWeight.py)  
+I use recursion to solve this problem. Every recursive step I sort the input vector, take 2 last element out of vector, get the subtraction and push the result back in vector. The base case is when the vector size equals to 0 or 1.  
+
+
 
