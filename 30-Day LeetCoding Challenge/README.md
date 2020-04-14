@@ -16,6 +16,8 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 10. [Day 10 - Min Stack](#day10)
 11. [Day 11 - Diameter of Binary Tree](#day11)
 12. [Day 12 - Last Stone Weight](#day12)
+13. [Day 13 - Contiguous Array](#day13)
+14. [Day 14 - Perform String Shifts](#day14)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -209,5 +211,31 @@ At the end, there is at most 1 stone left.  Return the weight of this stone (or 
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/lastStoneWeight.py)  
 I use recursion to solve this problem. Every recursive step I sort the input vector, take 2 last element out of vector, get the subtraction and push the result back in vector. The base case is when the vector size equals to 0 or 1.  
 
+## Day 13 - Contiguous Array<a name="day13"></a>
+### Problem
+Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.  
+**Example 1**  
+`Input: [0,1]`  
+`Output: 2`  
+`Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.`  
+**Example 2**  
+`Input: [0,1,0]`  
+`Output: 2`  
+`Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.`
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/findMaxLength.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/findMaxLength.py)  
+Convert 0 elements to -1 then, remember the `sum` of elements in every iterator when looping through the vector. The subarray with equal number of 1 and 1 start from `i` and end at `j` `(i, j < vector size)` then `sum at j - sum at i = 0`. Use map to save the value following `(key = sum, value = current index)`. Time complexity is `O(N)`.
+## Day 14 - Perform String Shifts<a name="day14"></a>
+### Problem
+You are given a string s containing lowercase English letters, and a matrix shift, where shift[i] = [direction, amount]:
 
-
+- `direction` can be 0 (for left shift) or 1 (for right shift).   
+- `amount` is the amount by which string s is to be shifted.  
+- A left shift by 1 means remove the first character of `s` and append it to the end.   
+- Similarly, a right shift by 1 means remove the last character of s and add it to the beginning.
+Return the final string after all operations.  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/stringShift.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/stringShift.py)  
+First, I loop through the input vector to calculate the total shift steps. Then I loop through input string and do shift based on total shift step (remember to get the steps by modul that for string length!). The time complexity is `O(n)` `(n = max(array.size,string.size))`. Auxiliary space is `O(n) - n is length of string`.
