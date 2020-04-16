@@ -18,16 +18,17 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 12. [Day 12 - Last Stone Weight](#day12)
 13. [Day 13 - Contiguous Array](#day13)
 14. [Day 14 - Perform String Shifts](#day14)
+15. [Day 15 - Product of Array Except Self](#day15)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
 Given a non-empty array of integers, every element appears twice except for one. Find that single one.<br />
 *Note:*
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?<br />
-*Example 1*  
+**Example 1**  
 	`Input: [2,2,1]`  
 	`Output: 1`  
-*Example 2*  
+**Example 2**
 	`Input: [4,1,2,1,2]`  
 	`Output: 4`
 ### Solution & Explanation
@@ -41,10 +42,10 @@ Using XOR operator, there are 3 things to remember:
 ### Problem
 Write an algorithm to determine if a number is "happy".<br />
 A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.<br />
-*Example*  
+**Example**  
 `Input: 19`  
 `Output: true`  
-*Explanation*  
+**Explanation**  
 ![$1^2 + 9^2 = 82$](https://render.githubusercontent.com/render/math?math=%241%5E2%20%2B%209%5E2%20%3D%2082%24)  
 ![$8^2 + 2^2 = 68$](https://render.githubusercontent.com/render/math?math=%248%5E2%20%2B%202%5E2%20%3D%2068%24)  
 ![$6^2 + 8^2 = 100$](https://render.githubusercontent.com/render/math?math=%246%5E2%20%2B%208%5E2%20%3D%20100%24)  
@@ -60,10 +61,10 @@ First I will write a function can calculate a number following above rule (I cal
 ## Day 3 - Maximum Subarray<a name="day3"></a>
 ### Problem
 Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  
-*Example*  
+**Example**  
 `Input: [-2,1,-3,4,-1,2,1,-5,4]`  
 `Output: 6`  
-*Explanation*  
+**Explanation**  
 `[4,-1,2,1]` has the largest `sum = 6`.
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/maxSubArray.cpp)  
@@ -73,7 +74,7 @@ Using Kadane's Algorithm which loops through input list and in each iterator it 
 ## Day 4 - Move Zeroes<a name="day4"></a>
 ### Problem
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.  
-*Example*  
+**Example**  
 `Input: [0,1,0,3,12]`  
 `Output: [1,3,12,0,0]`  
 ### Solution & Explanation
@@ -88,10 +89,10 @@ Say you have an array for which the ith element is the price of a given stock on
 Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
 
 Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).  
-*Example*  
+**Example**  
 `Input: [7,1,5,3,6,4]`  
 `Output: 7`  
-*Explanation*  
+**Explanation**  
 Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/maxProfit.cpp)  
@@ -101,7 +102,7 @@ As you can see, `5-1` is equivalent to `(5-4)+(4-3)+(3-2)+(2-1)`. So we don't ne
 ## Day 6 - Group Anagrams<a name="day6"></a>
 ### Problem
 Given an array of strings, group anagrams together.  
-*Example*  
+**Example**  
 `Input: ["eat", "tea", "tan", "ate", "nat", "bat"]`  
 `Output:
 [
@@ -119,15 +120,15 @@ I sort string in input vector before check if it exists in `different_string` ve
 Given an integer array `arr`, count element `x` such that `x + 1` is also in `arr`.  
 
 If there're duplicates in `arr`, count them seperately.  
-*Example 1*  
+**Example 1**  
 `Input: arr = [1,2,3]`  
 `Output: 2`  
-*Explanation*   
+**Explanation**   
 1 and 2 are counted cause 2 and 3 are in `arr`.  
-*Example 2*  
+**Example 2**  
 `Input: arr = [1,1,3,3,5,5,7,7]`  
 `Output: 0`  
-*Explanation*  
+**Explanation**  
 No numbers are counted, cause there's no 2, 4, 6, or 8 in `arr`.
 ### Solution & Explanation
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/countElements.cpp)  
@@ -138,10 +139,10 @@ I save all the elements of input vector to a hashset or map. Then I loop through
 Given a non-empty, singly linked list with head node `head`, return a middle node of linked list.  
 
 If there are two middle nodes, return the second middle node.  
-*Example*  
+**Example**  
 `Input: [1,2,3,4,5]`  
 `Output: Node 3 from this list (Serialization: [3,4,5])`  
-*Explanation*  
+**Explanation**  
 The returned node has value 3.  (The judge's serialization of this node is `[3,4,5]`).
 Note that we returned a ListNode object ans, such that:  
 `ans.val = 3`, `ans.next.val = 4`, `ans.next.next.val = 5`, and `ans.next.next.next = NULL`.
@@ -154,7 +155,7 @@ I just put every node in a vector (or list in python) and then the middle node i
 ## Day 9 - Backspace String Compare<a name="day9"></a>
 ### Problem 
 Given two strings `S` and `T`, return if they are equal when both are typed into empty text editors. `#` means a backspace character.  
-*Example*  
+**Example**  
 `Input: S = "ab#c", T = "ad#c"`  
 `Output: true`  
 
@@ -170,7 +171,7 @@ Design a stack that supports push, pop, top, and retrieving the minimum element 
 - pop() -- Removes the element on top of the stack.
 - top() -- Get the top element.
 - getMin() -- Retrieve the minimum element in the stack.  
-*Example*  
+**Example**  
 >MinStack minStack = new MinStack();  
 minStack.push(-2);  
 minStack.push(0);  
@@ -239,3 +240,17 @@ Return the final string after all operations.
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/stringShift.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/stringShift.py)  
 First, I loop through the input vector to calculate the total shift steps. Then I loop through input string and do shift based on total shift step (remember to get the steps by modul that for string length!). The time complexity is `O(n)` `(n = max(array.size,string.size))`. Auxiliary space is `O(n) - n is length of string`.
+
+## Day 15 - Product of Array Except Self<a name="day15"></a>
+### Problem
+Given an array nums of `n` integers where `n > 1`,  return an array output such that `output[i]` is equal to the product of all the elements of `nums` except `nums[i]`.  
+**Example**  
+`Input:  [1,2,3,4]`  
+`Output: [24,12,8,6]`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/productExceptSelf.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/productExceptSelf.py)  
+There are two ways to approach this problem:  
+1. I just calculate the product of all elements in input array but 0 element. I also count number of zeros element. Then result at index `i` is this product divide for value of input array at `i`. In case count of zeros is greater than 1 then all output elements are zeros. If count of zeros equal to 1 then only value of output at index in which input array is 0, equals to the product and another positions the value is 0.
+2. I use 2 array to remember the product of input array forward and backward, i need two loop to do that. Then the value of ouput at index `i` is product of `prefix[i]*suffix[i+1]`.
+
