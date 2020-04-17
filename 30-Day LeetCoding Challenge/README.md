@@ -1,6 +1,7 @@
 
 # 30 Day LeetCoding Challenge
-Hi! I've been recently participated in **LeetCode** community and during the COVID-19 pandemic, I've joined **30 day LeetCoding Challenge**. I will update all problems and solutions for them with my explanations.
+Hi! I've been recently participated in **LeetCode** community and during the COVID-19 pandemic, I've joined **30 day LeetCoding Challenge** just for self-education purpose. I will update all problems and solutions for them with my explanations.  
+**PS:** Not every solution is mine, some are pretty hard for me so I must see hint or even other people's solution to understand.
 > Starting date: 02/04/20  
 > Expected finish date: 30/04/20
 ## Index
@@ -19,6 +20,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 13. [Day 13 - Contiguous Array](#day13)
 14. [Day 14 - Perform String Shifts](#day14)
 15. [Day 15 - Product of Array Except Self](#day15)
+16. [Day 16 - Valid Parenthesis String](#day16)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -254,3 +256,25 @@ There are two ways to approach this problem:
 1. I just calculate the product of all elements in input array but 0 element. I also count number of zeros element. Then result at index `i` is this product divide for value of input array at `i`. In case count of zeros is greater than 1 then all output elements are zeros. If count of zeros equal to 1 then only value of output at index in which input array is 0, equals to the product and another positions the value is 0.
 2. I use 2 array to remember the product of input array forward and backward, i need two loop to do that. Then the value of ouput at index `i` is product of `prefix[i]*suffix[i+1]`.
 
+## Day 16 - Valid Parenthesis String<a name="day16"></a>
+### Problem  
+Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid. We define the validity of a string by these rules:
+
+- Any left parenthesis '(' must have a corresponding right parenthesis ')'.  
+- Any right parenthesis ')' must have a corresponding left parenthesis '('.  
+- Left parenthesis '(' must go before the corresponding right parenthesis ')'.  
+- '*' could be treated as a single right parenthesis ')' or a single left parenthesis '(' or an empty string.
+An empty string is also valid.  
+**Example 1**   
+`Input: "()"`  
+`Output: True`  
+**Example 2**  
+`Input: "(*)"`  
+`Output: True`  
+**Example 3**  
+`Input: "(*))"`  
+`Output: True`
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/checkValidString.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/checkValidString.py)  
+Because the star symbol means it can be '(' or ')'. So that we check both forward and backward of string, every time we meet '(' or '\*' we increase `sum`, in case we meet ')' we decrease `sum` and if `sum = -1` that mean invalid. In the opposite direction, this must be also right, but we must change when ever we meet ')' or '\*' we inscrease `sum` and so on.
