@@ -21,6 +21,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 14. [Day 14 - Perform String Shifts](#day14)
 15. [Day 15 - Product of Array Except Self](#day15)
 16. [Day 16 - Valid Parenthesis String](#day16)
+17. [Day 17 - Number of Islands](#day17)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -30,7 +31,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 **Example 1**  
 	`Input: [2,2,1]`  
 	`Output: 1`  
-**Example 2**
+**Example 2**  
 	`Input: [4,1,2,1,2]`  
 	`Output: 4`
 ### Solution & Explanation
@@ -278,3 +279,19 @@ An empty string is also valid.
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/checkValidString.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/checkValidString.py)  
 Because the star symbol means it can be '(' or ')'. So that we check both forward and backward of string, every time we meet '(' or '\*' we increase `sum`, in case we meet ')' we decrease `sum` and if `sum = -1` that mean invalid. In the opposite direction, this must be also right, but we must change when ever we meet ')' or '\*' we inscrease `sum` and so on.
+
+## Day 17 - Number of Islands<a name="day17"></a>
+### Problem
+Given a 2d grid map of `'1'`s (land) and `'0'`s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.  
+**Example**  
+`Input:
+11110 
+11010  
+11000  
+00000`
+
+`Output: 1`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/numIslands.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/numIslands.py)  
+Using BFS (Breadth first search) to find all the `'1'` elements. When I solved this problem I hadn't know that is BFS, but after understand this algorithm (basis algorithm for traversing in graph) it is quite fast forward.
