@@ -22,6 +22,9 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 15. [Day 15 - Product of Array Except Self](#day15)
 16. [Day 16 - Valid Parenthesis String](#day16)
 17. [Day 17 - Number of Islands](#day17)
+18. [Day 18 - Minimum Path Sum](#day18)
+19. [Day 19 - Search in Rotated Sorted Array](#day19)
+20. [Day 20 - Construct Binary Search Tree from Preorder Traversal](#day20)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -295,3 +298,41 @@ Given a 2d grid map of `'1'`s (land) and `'0'`s (water), count the number of isl
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/numIslands.cpp)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/numIslands.py)  
 Using BFS (Breadth first search) to find all the `'1'` elements. When I solved this problem I hadn't know that is BFS, but after understand this algorithm (basis algorithm for traversing in graph) it is quite fast forward.
+
+## Day 18 - Minimum Path Sum<a name="day18"></a>
+Updating...
+## Day 19 - Search in Rotated Sorted Array<a name="day19"></a>
+### Problem
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., `[0,1,2,4,5,6,7]` might become `[4,5,6,7,0,1,2]`).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+
+Your algorithm's runtime complexity must be in the order of O(log n).  
+**Example**  
+`Input: nums = [4,5,6,7,0,1,2], target = 0`  
+`Output: 4`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/search.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/search.py)  
+Using the conceptual of binary search to approach this problem. Compare the first value of input array with target value and middle value to know the position of target value.  
+## Day 20 - Construct Binary Search Tree from Preorder Traversal<a name="day20"></a>
+### Problem
+Return the root node of a binary search tree that matches the given preorder traversal.
+
+*(Recall that a binary search tree is a binary tree where for every node, any descendant of `node.left` has a value < `node.val`, and any descendant of `node.right` has a value > `node.val`.  Also recall that a preorder traversal displays the value of the `node` first, then traverses `node.left`, then traverses `node.right`.)*  
+**Example**  
+`Input: [8,5,1,7,10,12]`  
+`Output: [8,5,10,1,7,null,12]`  
+### Solution & Explanation  
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/bstFromPreorder.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/bstFromPreorder.py)  
+Using a stack to save uncompleted node, after node has left and right, pop it out of stack. Do it till input array is empty.  
+1. Initialize first node with first value of input array and push it in a stack.
+2. while loop check index till go through all array
+3. in while loop, check if input array value at index is greater than lastest node in stack. If so, assign this value to the right node of the node in stack. And push it in stack.
+4. The remain case is the value smaller than value of node so it is the left node of lastest node in stack.  
+It's complicated, I know, but the code is more understandalbe !!
