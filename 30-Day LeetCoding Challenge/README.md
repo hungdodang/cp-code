@@ -25,6 +25,8 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 18. [Day 18 - Minimum Path Sum](#day18)
 19. [Day 19 - Search in Rotated Sorted Array](#day19)
 20. [Day 20 - Construct Binary Search Tree from Preorder Traversal](#day20)
+21. [Day 21 - Leftmost Column with at Least a One](#day21)
+22. [Day 22 - Subarray Sum Equals K](#day22)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -336,3 +338,34 @@ Using a stack to save uncompleted node, after node has left and right, pop it ou
 3. in while loop, check if input array value at index is greater than lastest node in stack. If so, assign this value to the right node of the node in stack. And push it in stack.
 4. The remain case is the value smaller than value of node so it is the left node of lastest node in stack.  
 It's complicated, I know, but the code is more understandalbe !!
+## Day 21 - Leftmost Column with at Least a One<a name="day21"></a>
+### Problem
+A binary matrix means that all elements are `0` or `1`. For each individual row of the matrix, this row is sorted in non-decreasing order.
+
+Given a row-sorted binary matrix binaryMatrix, return leftmost column index(0-indexed) with at least a `1` in it. If such index doesn't exist, return `-1`.
+
+You can't access the Binary Matrix directly.  You may only access the matrix using a `BinaryMatrix` interface:
+
+`BinaryMatrix.get(row, col)` returns the element of the matrix at index `(row, col)` (0-indexed).  
+`BinaryMatrix.dimensions()` returns a list of 2 elements `[rows, cols]`, which means the matrix is `rows * cols`.  
+Submissions making more than `1000` calls to `BinaryMatrix.get` will be judged Wrong Answer.  Also, any solutions that attempt to circumvent the judge will result in disqualification.
+
+For custom testing purposes you're given the binary matrix `mat` as input in the following four examples. You will not have access the binary matrix directly.  
+**Example**  
+`Input: mat = [[0,0],[1,1]]`  
+`Output: 0`
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/leftMostColumnWithOne.cpp)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/leftMostColumnWithOne.py)  
+In C++ code, I use binary search to find the left most one element on each row and update the answer.  
+In Python code, I use a pointer (x, y) starting from top right. If value of p is 0, move p down. If the value of p is 1, move left.  
+## Day 22 - Subarray Sum Equals K<a name="day22"></a>
+### Problem
+Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.  
+**Example**  
+`Input:nums = [1,1,1], k = 2`  
+`Output: 2`
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/subarraySum.py)  
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/subarraySum.py)  
+Use hash map to store sum value of every index. Check the subtraction off this sum and k and find whether it in the hash map and increase answer value by one.  
