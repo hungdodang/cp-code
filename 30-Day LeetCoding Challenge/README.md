@@ -27,6 +27,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 20. [Day 20 - Construct Binary Search Tree from Preorder Traversal](#day20)
 21. [Day 21 - Leftmost Column with at Least a One](#day21)
 22. [Day 22 - Subarray Sum Equals K](#day22)
+23. [Day 23 - Bitwise AND of Numbers Range](#day23)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -369,3 +370,13 @@ Given an array of integers and an integer k, you need to find the total number o
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/subarraySum.py)  
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/subarraySum.py)  
 Use hash map to store sum value of every index. Check the subtraction off this sum and k and find whether it in the hash map and increase answer value by one.  
+## Day 23 - Bitwise AND of Numbers Range<a name="day23"></a>
+### Problem
+Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of all numbers in this range, inclusive.  
+**Example**<br>
+`Input: [5,7]`<br>
+`Output: 4`
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/rangeBitwiseAnd.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/rangeBitwiseAnd.py)<br>
+In range m - n, bitwise AND only return 1 if all bit is 1, so that we just need to check the MSB part (right -> left) of m and n, because the answer is the similar part of MSB of m and n.
