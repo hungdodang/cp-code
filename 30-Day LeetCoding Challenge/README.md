@@ -28,6 +28,10 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 21. [Day 21 - Leftmost Column with at Least a One](#day21)
 22. [Day 22 - Subarray Sum Equals K](#day22)
 23. [Day 23 - Bitwise AND of Numbers Range](#day23)
+24. [Day 24 - LRU Cache](#day24)
+25. [Day 25 - Jump Game](#day25)
+26. [Day 26 - Longest Common Subsequence](#day26)
+27. [Day 27 - Maximal Square](#day27)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -380,3 +384,84 @@ Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of 
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/rangeBitwiseAnd.cpp)<br>
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/rangeBitwiseAnd.py)<br>
 In range m - n, bitwise AND only return 1 if all bit is 1, so that we just need to check the MSB part (right -> left) of m and n, because the answer is the similar part of MSB of m and n.
+## Day 24 - LRU Cache<a name="day24"></a>
+### Problem
+Design and implement a data structure for `Least Recently Used (LRU) cache`. It should support the following operations: `get` and `put`.
+
+`get(key)` - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+`put(key, value)` - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
+The cache is initialized with a positive capacity.<br>
+**Example**<br>
+```
+LRUCache cache = new LRUCache( 2 /* capacity */ );
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // returns 1
+cache.put(3, 3);    // evicts key 2
+cache.get(2);       // returns -1 (not found)
+cache.put(4, 4);    // evicts key 1
+cache.get(1);       // returns -1 (not found)
+cache.get(3);       // returns 3
+cache.get(4);       // returns 4
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/LRUCache.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/LRUCache.py)<br>
+Using one hash map to save key and value as normal, one queue, one hash map to do LRU feature. Whenever doing get or put action, add this key to queue and increase value of this key in second hash map by one. When putting new key to cache, if the cache is full then just pop from queue and check if this key in second hash map is zero then erase this value from cache.
+
+## Day 25 - Jump Game<a name="day25"></a>
+### Problem
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+
+Each element in the array represents your maximum jump length at that position.
+
+Determine if you are able to reach the last index.<br>
+**Example 1**<br>
+`Input: [2,3,1,1,4]`  
+`Output: true`    
+`Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.`  
+**Example 2**<br>
+`Input: [3,2,1,0,4]`  
+`Output: false`  
+`Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.`  
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/canJump.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/canJump.py)<br>
+Loop through the input array and update the `maxJump`, if at current index the value is 0 and `maxJump` is 0 also, then it can not go to last index unless it is the last index.
+## Day 26 - Longest Common Subsequence<a name="day26"></a>
+### Problem
+Given two strings `text1` and `text2`, return the length of their longest common subsequence.
+
+A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, "ace" is a subsequence of "abcde" while "aec" is not). A common subsequence of two strings is a subsequence that is common to both strings.
+
+If there is no common subsequence, return 0.<br>
+**Example**<br>
+```
+Input: text1 = "abcde", text2 = "ace"   
+Output: 3    
+Explanation: The longest common subsequence is "ace" and its length is 3.  
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/longestCommonSubsequence.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/longestCommonSubsequence.py)<br>
+Using dynamic programming to solve this problem, `dp[i][j]` to save the longest common subsequence of two text. If `text1[i] == text2[j]` then `dp[i][j] = dp[i-1][j-1]`, otherwise `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`.
+## Day 27 - Maximal Square<a name="day27"></a>
+### Problem
+Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.<br>
+**Example**<br>
+```
+Input: 
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+
+Output: 4
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/maximalSquare.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/maximalSquare.py)<br>
+Also using dynamic programming to solve this problem. `dp[i][j]` represents for the height of maximum square containning `1`. Quite similar to problem in day 26.
