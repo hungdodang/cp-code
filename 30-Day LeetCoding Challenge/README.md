@@ -32,6 +32,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 25. [Day 25 - Jump Game](#day25)
 26. [Day 26 - Longest Common Subsequence](#day26)
 27. [Day 27 - Maximal Square](#day27)
+28. [Day 28 - First Unique Number](#day28)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -465,3 +466,35 @@ Output: 4
 [Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/maximalSquare.cpp)<br>
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/maximalSquare.py)<br>
 Also using dynamic programming to solve this problem. `dp[i][j]` represents for the height of maximum square containning `1`. Quite similar to problem in day 26.
+## Day 28 - First Unique Number<a name="day28"></a>
+### Problem
+You have a queue of integers, you need to retrieve the first unique integer in the queue.
+
+Implement the `FirstUnique` class:
+
+- `FirstUnique(int[] nums)` Initializes the object with the numbers in the queue.
+- `int showFirstUnique()` returns the value of the first unique integer of the queue, and returns -1 if there is no such integer.
+- `void add(int value)` insert value to the queue.<br><br>
+**Example**
+```
+Input: 
+["FirstUnique","showFirstUnique","add","showFirstUnique","add","showFirstUnique","add","showFirstUnique"]
+[[[2,3,5]],[],[5],[],[2],[],[3],[]]
+Output: 
+[null,2,null,2,null,3,null,-1]
+
+Explanation: 
+FirstUnique firstUnique = new FirstUnique([2,3,5]);
+firstUnique.showFirstUnique(); // return 2
+firstUnique.add(5);            // the queue is now [2,3,5,5]
+firstUnique.showFirstUnique(); // return 2
+firstUnique.add(2);            // the queue is now [2,3,5,5,2]
+firstUnique.showFirstUnique(); // return 3
+firstUnique.add(3);            // the queue is now [2,3,5,5,2,3]
+firstUnique.showFirstUnique(); // return -1
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/FirstUnique.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/FirstUnique.py)<br>
+I using a normal queue to add all number and use a hash map to count the occurence of number in queue. When call `showFirstUnique` just check front number in queue and the occurence of this is equal to `1` or not, if not pop that from queue and continue until the queue is empty.
+
