@@ -33,6 +33,7 @@ Hi! I've been recently participated in **LeetCode** community and during the COV
 26. [Day 26 - Longest Common Subsequence](#day26)
 27. [Day 27 - Maximal Square](#day27)
 28. [Day 28 - First Unique Number](#day28)
+29. [Day 29 - Binary Tree Maximum Path Sum](#day29)
 ## Day 1 - Single Number<a name="day1"></a>
 
 ### Problem
@@ -308,7 +309,26 @@ Given a 2d grid map of `'1'`s (land) and `'0'`s (water), count the number of isl
 Using BFS (Breadth first search) to find all the `'1'` elements. When I solved this problem I hadn't know that is BFS, but after understand this algorithm (basis algorithm for traversing in graph) it is quite fast forward.
 
 ## Day 18 - Minimum Path Sum<a name="day18"></a>
-Updating...
+### Problem 
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.<br>
+**Example**<br>
+```
+Input:
+[
+  [1,3,1],
+  [1,5,1],
+  [4,2,1]
+]
+Output: 7
+Explanation: Because the path 1→3→1→1→1 minimizes the sum.
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/minPathSum.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/minPathSum.py)<br>
+Using dynamic programming, save to min path of every position in a vector, the lastest value in this vector is the answer we need.
+
 ## Day 19 - Search in Rotated Sorted Array<a name="day19"></a>
 ### Problem
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
@@ -498,3 +518,22 @@ firstUnique.showFirstUnique(); // return -1
 [Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/FirstUnique.py)<br>
 I using a normal queue to add all number and use a hash map to count the occurence of number in queue. When call `showFirstUnique` just check front number in queue and the occurence of this is equal to `1` or not, if not pop that from queue and continue until the queue is empty.
 
+## Day 29 - Binary Tree Maximum Path Sum<a name="day29"></a>
+### Problem 
+Given a non-empty binary tree, find the maximum path sum.
+
+For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.<br>
+**Example**
+```
+Input: [1,2,3]
+
+       1
+      / \
+     2   3
+
+Output: 6
+```
+### Solution & Explanation
+[Solution in C++](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/C%2B%2B/maxPathSum.cpp)<br>
+[Solution in Python](https://github.com/hungdodang/cp-code/blob/master/30-Day%20LeetCoding%20Challenge/Python/maxPathSum.py)<br>
+Using depth first search conceptual, update max path to a global value.
